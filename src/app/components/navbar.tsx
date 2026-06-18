@@ -1,37 +1,33 @@
-"use client";
+'use client'
 
-import { useState, useEffect } from "react";
-import { Menu, X, Package2, ChevronDown } from "lucide-react";
+import { useState, useEffect } from 'react'
+import { Menu, X, Package2, ChevronDown } from 'lucide-react'
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Fitur", href: "#fitur" },
-  { label: "Produk", href: "#produk" },
-  { label: "Tentang Kami", href: "#about" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Kontak", href: "#kontak" },
-];
+  { label: 'Home', href: '#home' },
+  { label: 'Fitur', href: '#fitur' },
+  { label: 'Produk', href: '#produk' },
+  { label: 'Tentang Kami', href: '#about' },
+  { label: 'FAQ', href: '#faq' },
+  { label: 'Kontak', href: '#kontak' }
+]
 
 export default function navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    const onScroll = () => setScrolled(window.scrollY > 10)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.08)]"
-          : "bg-white/80 backdrop-blur-sm"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.08)]' : 'bg-white/80 backdrop-blur-sm'}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-18">
-
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3">
             <img
@@ -86,8 +82,7 @@ export default function navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
-          }`}
+        className={`lg:hidden overflow-hidden transition-all duration-300 ${menuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'}`}
       >
         <div className="px-4 pb-5 pt-2 bg-white/98 backdrop-blur-md border-t border-gray-100 space-y-1">
           {navLinks.map((link) => (
@@ -112,5 +107,5 @@ export default function navbar() {
         </div>
       </div>
     </nav>
-  );
+  )
 }

@@ -1,80 +1,76 @@
-"use client";
+'use client'
 
-import { useState } from "react";
+import { useState } from 'react'
 import {
   ShieldCheck,
   BadgeCheck,
   FileCheck2,
   ChevronLeft,
   ChevronRight,
-  Check,
-} from "lucide-react";
-
+  Check
+} from 'lucide-react'
 
 const brands = [
-  { src: "/logos/Samsung.png", size: "h-6 md:h-8" },
-  { src: "/logos/Nvidia.png", size: "h-6 md:h-8" },
-  { src: "/logos/Sony.png", size: "h-6 md:h-8" },
-  { src: "/logos/CocaCola.png", size: "h-6 md:h-8" },
-  { src: "/logos/Nestle.png", size: "h-6 md:h-8" },
-  { src: "/logos/Amazon.png", size: "h-6 md:h-8" },
-  { src: "/logos/Prada.png", size: "h-8 md:h-12" },
-  { src: "/logos/Victoria'sSecret.png", size: "h-8 md:h-12" },
-];
+  { src: '/logos/Samsung.png', size: 'h-6 md:h-8' },
+  { src: '/logos/Nvidia.png', size: 'h-6 md:h-8' },
+  { src: '/logos/Sony.png', size: 'h-6 md:h-8' },
+  { src: '/logos/CocaCola.png', size: 'h-6 md:h-8' },
+  { src: '/logos/Nestle.png', size: 'h-6 md:h-8' },
+  { src: '/logos/Amazon.png', size: 'h-6 md:h-8' },
+  { src: '/logos/Prada.png', size: 'h-8 md:h-12' },
+  { src: "/logos/Victoria'sSecret.png", size: 'h-8 md:h-12' }
+]
 
 const testimonials = [
   {
-    brand: "Victoria Secret",
-    category: "Specialty Retail (Ritel Khusus)",
-    text: `"Akurasi inventaris naik menjadi 99% sejak menggunakan WMS Pintar. Tidak ada lagi drama barang hilang atau salah kirim saat audit."`,
+    brand: 'Victoria Secret',
+    category: 'Specialty Retail (Ritel Khusus)',
+    text: `"Akurasi inventaris naik menjadi 99% sejak menggunakan WMS Pintar. Tidak ada lagi drama barang hilang atau salah kirim saat audit."`
   },
 
   {
-    brand: "Nestle",
-    category: "F&B / FMCG Manufacturing",
-    text: `"Fitur pelacakan Batch dan visibilitas FEFO dari WMS Pintar menyelamatkan kami dari kerugian miliaran rupiah akibat produk expired. Standar keamanan pangan kami kini 100% terjaga."`,
+    brand: 'Nestle',
+    category: 'F&B / FMCG Manufacturing',
+    text: `"Fitur pelacakan Batch dan visibilitas FEFO dari WMS Pintar menyelamatkan kami dari kerugian miliaran rupiah akibat produk expired. Standar keamanan pangan kami kini 100% terjaga."`
   },
 
   {
-    brand: "Amazon",
-    category: "E-commerce & Logistics",
-    text: `"WMS Pintar adalah otak di balik jalur delivery kami. Sistem ini mampu mengoptimalkan ribuan pesanan per jam dengan akurasi mencapai 99.8%."`,
+    brand: 'Amazon',
+    category: 'E-commerce & Logistics',
+    text: `"WMS Pintar adalah otak di balik jalur delivery kami. Sistem ini mampu mengoptimalkan ribuan pesanan per jam dengan akurasi mencapai 99.8%."`
   },
 
   {
-    brand: "Sony",
-    category: "Technology",
-    text: `"Monitoring stok menjadi jauh lebih cepat dan real-time. Tim operasional kami kini bekerja lebih efisien."`,
+    brand: 'Sony',
+    category: 'Technology',
+    text: `"Monitoring stok menjadi jauh lebih cepat dan real-time. Tim operasional kami kini bekerja lebih efisien."`
   },
 
   {
-    brand: "Samsung",
-    category: "Electronics",
-    text: `"Integrasi dashboard dan tracking RFID sangat membantu proses distribusi skala besar."`,
-  },
-];
+    brand: 'Samsung',
+    category: 'Electronics',
+    text: `"Integrasi dashboard dan tracking RFID sangat membantu proses distribusi skala besar."`
+  }
+]
 
 function BrandSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextSlide = () => {
     if (currentIndex < testimonials.length - 3) {
-      setCurrentIndex((prev) => prev + 1);
+      setCurrentIndex((prev) => prev + 1)
     }
-  };
+  }
 
   const prevSlide = () => {
     if (currentIndex > 0) {
-      setCurrentIndex((prev) => prev - 1);
+      setCurrentIndex((prev) => prev - 1)
     }
-  };
+  }
 
   return (
-    <section
-      id="about"
-      className="w-full bg-gray-200 py-24 overflow-hidden">
+    <section id="about" className="w-full bg-gray-200 py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-
         {/* HEADING */}
         <div className="text-center mb-14">
           <h2 className="text-[48px] md:text-[48px] font-semibold text-[#4b4545] leading-tight">
@@ -107,11 +103,10 @@ function BrandSection() {
 
         {/* TESTIMONIAL */}
         <div className="relative overflow-hidden">
-
           <div
             className="flex gap-6 transition-transform duration-500 ease-in-out"
             style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
+              transform: `translateX(-${currentIndex * 100}%)`
             }}
           >
             {testimonials.map((item, index) => (
@@ -138,7 +133,6 @@ function BrandSection() {
 
           {/* BUTTON */}
           <div className="flex items-center justify-between mt-10">
-
             <button
               onClick={prevSlide}
               disabled={currentIndex === 0}
@@ -160,7 +154,6 @@ function BrandSection() {
                 className="text-gray-400 group-hover:text-red-600"
               />
             </button>
-
           </div>
         </div>
       </div>
@@ -184,9 +177,8 @@ function BrandSection() {
         `}
       </style>
     </section>
-  );
+  )
 }
-
 
 const TableComparison = () => {
   return (
@@ -195,11 +187,10 @@ const TableComparison = () => {
       className="w-full bg-gray-200 py-24 px-6 md:px-10"
     >
       <div className="max-w-7xl mx-auto">
-
         {/* Heading */}
         <div className="text-center mb-14">
           <h2 className="text-[30px] md:text-[40px] lg:text-[46px] font-semibold text-[#4f4a4a] leading-tight">
-            Bandingkan Fitur Paket{" "}
+            Bandingkan Fitur Paket{' '}
             <span className="text-red-700 italic font-serifDisplay">
               WMS Pintar
             </span>
@@ -209,7 +200,6 @@ const TableComparison = () => {
         {/* Table */}
         <div className="overflow-x-auto">
           <table className="w-full min-w-[1000px] border-separate border-spacing-y-5">
-
             {/* Header */}
             <thead>
               <tr>
@@ -237,7 +227,6 @@ const TableComparison = () => {
 
             {/* Body */}
             <tbody>
-
               {/* Row 1 */}
               <tr className="bg-[#fafafa]">
                 <td className="px-8 py-8 text-[14px] font-semibold text-[#2f2f2f] rounded-l-md">
@@ -268,31 +257,19 @@ const TableComparison = () => {
                 </td>
 
                 <td>
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td>
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td>
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td>
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
               </tr>
 
@@ -302,29 +279,18 @@ const TableComparison = () => {
                   Scan RFID Dasar
                 </td>
 
-                <td className="text-center text-gray-300 text-2xl">
-                  —
+                <td className="text-center text-gray-300 text-2xl">—</td>
+
+                <td>
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td>
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
-                </td>
-
-                <td>
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td className="rounded-r-md">
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
               </tr>
 
@@ -336,26 +302,16 @@ const TableComparison = () => {
                   Scanning)
                 </td>
 
-                <td className="text-center text-gray-300 text-2xl">
-                  —
-                </td>
+                <td className="text-center text-gray-300 text-2xl">—</td>
 
-                <td className="text-center text-gray-300 text-2xl">
-                  —
+                <td className="text-center text-gray-300 text-2xl">—</td>
+
+                <td>
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td>
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
-                </td>
-
-                <td>
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
               </tr>
 
@@ -372,24 +328,15 @@ const TableComparison = () => {
                 </td>
 
                 <td>
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td>
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td className="rounded-r-md">
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
               </tr>
 
@@ -401,29 +348,18 @@ const TableComparison = () => {
                   99%)
                 </td>
 
-                <td className="text-center text-gray-300 text-2xl">
-                  —
+                <td className="text-center text-gray-300 text-2xl">—</td>
+
+                <td>
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td>
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td>
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
-                </td>
-
-                <td>
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
               </tr>
 
@@ -456,19 +392,12 @@ const TableComparison = () => {
                   Dukungan Multi Gudang
                 </td>
 
-                <td className="text-center text-gray-300 text-2x1">
-                  —
-                </td>
+                <td className="text-center text-gray-300 text-2x1">—</td>
 
-                <td className="text-center text-gray-300 text 2x1">
-                  —
-                </td>
+                <td className="text-center text-gray-300 text 2x1">—</td>
 
                 <td className="rounded-r-md">
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td className="text-center text-[13px] text-[#2f2f2f]">
@@ -484,29 +413,18 @@ const TableComparison = () => {
                   POS
                 </td>
 
-                <td className="text-center text-gray-300 text-2x1">
-                  —
+                <td className="text-center text-gray-300 text-2x1">—</td>
+
+                <td className="rounded-r-md">
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td className="rounded-r-md">
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td className="rounded-r-md">
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
-                </td>
-
-                <td className="rounded-r-md">
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
               </tr>
 
@@ -518,26 +436,16 @@ const TableComparison = () => {
                   Oracle)
                 </td>
 
-                <td className="text-center text-gray-300 font-2x1">
-                  —
-                </td>
+                <td className="text-center text-gray-300 font-2x1">—</td>
 
-                <td className="text-center text-gray-300 font-2x1">
-                  —
+                <td className="text-center text-gray-300 font-2x1">—</td>
+
+                <td className="rounded-r-md">
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td className="rounded-r-md">
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
-                </td>
-
-                <td className="rounded-r-md">
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
               </tr>
 
@@ -548,29 +456,18 @@ const TableComparison = () => {
                   Permissions
                 </td>
 
-                <td className="text-center text-gray-300 font-2x1">
-                  —
+                <td className="text-center text-gray-300 font-2x1">—</td>
+
+                <td className="rounded-r-md">
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td className="rounded-r-md">
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
 
                 <td className="rounded-r-md">
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
-                </td>
-
-                <td className="rounded-r-md">
-                  <Check
-                    size={18}
-                    className="mx-auto text-black"
-                  />
+                  <Check size={18} className="mx-auto text-black" />
                 </td>
               </tr>
 
@@ -597,14 +494,13 @@ const TableComparison = () => {
                   Dedicated Manager
                 </td>
               </tr>
-
             </tbody>
           </table>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
 function About() {
   const securityItems = [
@@ -616,8 +512,8 @@ function About() {
           className="w-24 h-24 object-contain"
         />
       ),
-      title: "Sertifikasi ISO 27001",
-      desc: "Sistem Manajemen Keamanan Informasi Kami Telah Diaudit Secara Independen Untuk Melindungi Aset Data Anda Dari Berbagai Ancaman Siber Dengan Standar Internasional Tertinggi.",
+      title: 'Sertifikasi ISO 27001',
+      desc: 'Sistem Manajemen Keamanan Informasi Kami Telah Diaudit Secara Independen Untuk Melindungi Aset Data Anda Dari Berbagai Ancaman Siber Dengan Standar Internasional Tertinggi.'
     },
 
     {
@@ -628,38 +524,29 @@ function About() {
           className="w-24 h-24 object-contain"
         />
       ),
-      title: "Kepatuhan SOC 2 Type II",
-      desc: "Bukti Nyata Komitmen Kami Dalam Menjalankan Kontrol Operasional Yang Ketat Dan Konsisten Terhadap Ketersediaan, Kerahasiaan, Serta Integritas Data Pelanggan.",
+      title: 'Kepatuhan SOC 2 Type II',
+      desc: 'Bukti Nyata Komitmen Kami Dalam Menjalankan Kontrol Operasional Yang Ketat Dan Konsisten Terhadap Ketersediaan, Kerahasiaan, Serta Integritas Data Pelanggan.'
     },
 
     {
       icon: (
         <div className="flex items-center gap-2">
-          <ShieldCheck
-            size={42}
-            className="text-green-400"
-          />
+          <ShieldCheck size={42} className="text-green-400" />
 
-          <FileCheck2
-            size={42}
-            className="text-blue-400"
-          />
+          <FileCheck2 size={42} className="text-blue-400" />
         </div>
       ),
 
-
-      title: "Regulasi Privasi Data",
-      desc: "Sepenuhnya Mematuhi Regulasi Perlindungan Privasi Data Paling Ketat Di Dunia (GDPR & CCPA) Untuk Memastikan Hak Dan Kerahasiaan Informasi Pengguna Selalu Terjaga.",
-    },
-  ];
+      title: 'Regulasi Privasi Data',
+      desc: 'Sepenuhnya Mematuhi Regulasi Perlindungan Privasi Data Paling Ketat Di Dunia (GDPR & CCPA) Untuk Memastikan Hak Dan Kerahasiaan Informasi Pengguna Selalu Terjaga.'
+    }
+  ]
 
   return (
     <section className="w-full bg-white py-24 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
-
         {/* TOP SECTION */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-24">
-
           {/* LEFT */}
           <div>
             <h2 className="text-[28px] md:text-[37px] leading-[1.1] font-semibold text-[#4d4747] mb-6">
@@ -688,15 +575,12 @@ function About() {
 
         {/* BOTTOM CARDS */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-
           {securityItems.map((item, index) => (
             <div
               key={index}
               className="bg-gray-200 rounded-[26px] px-6 md:px-8 py-8 md:py-10"
             >
-              <div className="mb-8 flex justify-center">
-                {item.icon}
-              </div>
+              <div className="mb-8 flex justify-center">{item.icon}</div>
 
               <h3 className="text-[22px] md:text-[28px] font-semibold text-[#2f2f2f] mb-4 leading-tight">
                 {item.title}
@@ -708,10 +592,9 @@ function About() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
-  );
+  )
 }
 export default function App() {
   return (
@@ -720,5 +603,5 @@ export default function App() {
       <TableComparison />
       <About />
     </>
-  );
+  )
 }
