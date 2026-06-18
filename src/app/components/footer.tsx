@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { SquarePlay, CircleFadingPlus, Music2 } from 'lucide-react'
 
 export default function footer() {
@@ -5,7 +6,7 @@ export default function footer() {
     <footer id="footer" className="w-full bg-[#f5f5f5] pt-28 overflow-hidden">
       {/* CTA BOX */}
       <div className="max-w-[1200px] mx-auto px-8 relative z-10">
-        <div className="bg-gradient-to-r from-red-600 to-red-900 rounded-[18px] px-6 md:px-[30px] py-8 md:py-[35px] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+        <div className="bg-linear-to-r from-red-600 to-red-900 rounded-[18px] px-6 md:px-[30px] py-8 md:py-[35px] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
           {/* TEXT */}
           <h2 className="text-white uppercase font-bold text-[20px] md:text-[25px] max-w-[760px] text-center md:text-left">
             TARGETKAN PERTUMBUHAN MAKSIMAL?
@@ -47,7 +48,7 @@ export default function footer() {
               </div>
 
               {/* DESC */}
-              <p className="mt-2 text-[15px] leading-[1.5] text-[#555] max-w-[390px]">
+              <p className="mt-2 text-[15px] leading-normal text-[#555] max-w-[390px]">
                 Solusi pergudangan cerdas yang
                 <br />
                 memberdayakan bisnis di era digital melalui

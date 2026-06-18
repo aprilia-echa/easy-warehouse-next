@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { CircleCheck } from 'lucide-react'
 
 const plans = [
@@ -117,7 +116,7 @@ function PricingCard({ plan }: { plan: Plan }) {
       </div>
 
       {/* Description */}
-      <p className="text-xs text-gray-500 leading-relaxed mb-8 min-h-[3rem]">
+      <p className="text-xs text-gray-500 leading-relaxed mb-8 min-h-12">
         {plan.description}
       </p>
 
@@ -127,7 +126,7 @@ function PricingCard({ plan }: { plan: Plan }) {
     w-full py-3 rounded-md text-sm tracking-wide
     transition-all duration-300 ease-out
 
-    ${plan.featured ? 'bg-red-600 text-white hover:bg-gradient-to-r hover:from-red-800 hover:to-black' : 'bg-white text-red-600 border border-red-600 hover:bg-gradient-to-r hover:from-red-700 hover:to-black hover:text-white'}
+    ${plan.featured ? 'bg-red-600 text-white hover:bg-linear-to-r hover:from-red-800 hover:to-black' : 'bg-white text-red-600 border border-red-600 hover:bg-linear-to-r hover:from-red-700 hover:to-black hover:text-white'}
   `}
       >
         {plan.buttonText}
@@ -142,10 +141,7 @@ function PricingCard({ plan }: { plan: Plan }) {
       <ul className="space-y-1 flex-1 mb-7">
         {plan.features.map((feature, i) => (
           <li key={i} className="flex items-start gap-3">
-            <CircleCheck
-              size={18}
-              className="text-red-600 mt-0.5 flex-shrink-0"
-            />
+            <CircleCheck size={18} className="text-red-600 mt-0.5 shrink-0" />
 
             <span className="text-xs text-gray-600">{feature}</span>
           </li>

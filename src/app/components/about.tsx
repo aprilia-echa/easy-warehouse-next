@@ -1,9 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 
 import { useState } from 'react'
 import {
   ShieldCheck,
-  BadgeCheck,
   FileCheck2,
   ChevronLeft,
   ChevronRight,
@@ -567,8 +567,7 @@ function About() {
             <img
               src="https://magentaldcc.com/wp-content/uploads/2021/11/warehouse_supervisor_job.jpg"
               alt="warehouse"
-              className="rounded-[24px] w-full max-w-[520px] h-[340px] object-cover
-              rounded-[24px] w-full max-w-[520px] h-[250px] md:h-[340px] object-cover"
+              className="max-w-[520px] h-[340px] object-cover rounded-[24px] w-full md:h-[340px]"
             />
           </div>
         </div>
