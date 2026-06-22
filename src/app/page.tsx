@@ -1,10 +1,14 @@
-import Navbar from '@/app/components/navbar'
-import Hero from '@/app/components/hero'
-import Feature from '@/app/components/feature'
-import Product from '@/app/components/product'
-import About from '@/app/components/about'
-import Faq from '@/app/components/faq'
-import Footer from '@/app/components/footer'
+import {
+  Navbar,
+  Hero,
+  Feature,
+  Product,  
+  Brand,
+  Comparison,
+  About,
+  Faq,
+  Footer,
+} from '@/app/components'
 
 export default function Home() {
   return (
@@ -13,6 +17,8 @@ export default function Home() {
       <Hero />
       <Feature />
       <Product />
+      <Brand />
+      <Comparison />
       <About />
       <Faq />
       <Footer />

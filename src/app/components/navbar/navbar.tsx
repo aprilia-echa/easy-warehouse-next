@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Menu, X, Package2, ChevronDown } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -9,10 +10,10 @@ const navLinks = [
   { label: 'Produk', href: '#produk' },
   { label: 'Tentang Kami', href: '#about' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Kontak', href: '#kontak' }
+  { label: 'Kontak', href: '#footer' }
 ]
 
-export default function navbar() {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -30,10 +31,12 @@ export default function navbar() {
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3">
-            <img
+            <Image
               src="/logos/logo.png"
               alt="logo"
-              className="w-10 h-10 object-contain"
+              width={40}
+              height={40}
+              className="object-contain"
             />
             <div className="flex flex-col leading-none">
               <span className="font-semibold text-[15px] text-gray-900 tracking-tight">

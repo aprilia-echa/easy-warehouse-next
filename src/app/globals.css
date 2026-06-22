@@ -5,15 +5,8 @@
   --foreground: #171717;
 }
 
-.font-serifDisplay {
-  font-family: 'Cormorant Garamond', serif;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.font-lora {
+  font-family: var(--font-lora);
 }
 
 @media (prefers-color-scheme: dark) {

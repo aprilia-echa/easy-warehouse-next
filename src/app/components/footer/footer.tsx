@@ -25,7 +25,7 @@ export default function footer() {
       <div className="bg-[#ececec] mt-[-45px] pt-24 md:pt-32 pb-12">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           {/* GRID */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-10 lg:gap-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1.4fr_1fr_1fr_1fr] gap-8">
             {/* LEFT SIDE */}
             <div>
               {/* LOGO */}
@@ -75,33 +75,6 @@ export default function footer() {
                     <CircleFadingPlus size={20} className="text-[#555]" />
                   </div>
                 </a>
-              </div>
-
-              {/* CONTACT */}
-              <div className="flex flex-col md:flex-row gap-6 md:gap-20 mt-12 md:mt-24">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-                  <p className="text-[15px] text-[#666] whitespace-nowrap">
-                    Phone number
-                  </p>
-
-                  <a href="https://web.whatsapp.com">
-                    <p className="text-[15px] font-medium text-[#222] whitespace-nowrap">
-                      1-800-201-1019
-                    </p>
-                  </a>
-                </div>
-
-                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-                  <p className="text-[15px] text-[#666] whitespace-nowrap">
-                    Email
-                  </p>
-
-                  <a href="mailto:RapierSupport@gmail.com">
-                    <p className="text-[15px] font-medium text-[#222] whitespace-nowrap">
-                      RapierSupport@gmail.com
-                    </p>
-                  </a>
-                </div>
               </div>
             </div>
 
@@ -164,6 +137,33 @@ export default function footer() {
               </ul>
             </div>
           </div>
+
+           {/* CONTACT */}
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-20 mt-12 lg:mt-24 order-last lg:order-none">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+                <p className="text-[15px] text-[#666] whitespace-nowrap">
+                  Phone number
+                </p>
+
+                <a href="https://web.whatsapp.com">
+                  <p className="text-[15px] font-medium text-[#222] whitespace-nowrap">
+                    1-800-201-1019
+                  </p>
+                </a>
+              </div>
+
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+                <p className="text-[15px] text-[#666] whitespace-nowrap">
+                  Email
+                </p>
+
+                <a href="mailto:RapierSupport@gmail.com">
+                  <p className="text-[15px] font-medium text-[#222] whitespace-nowrap">
+                    RapierSupport@gmail.com
+                  </p>
+                </a>
+              </div>
+            </div>
 
           {/* COPYRIGHT */}
           <div className="mt-14 pt-8 border-t border-[#dddddd]">

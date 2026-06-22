@@ -185,7 +185,7 @@ export default function PricingSection() {
           <h2 className="text-4xl font-semibold text-gray-700 mb-4">
             Ubah Gudang Konvensional Menjadi
             <br />
-            <span className="font-serifDisplay italic text-red-600 text-[40px]">
+            <span className="font-lora italic text-red-600 text-[40px]">
               {' '}
               Pusat Operasional Pintar
             </span>
